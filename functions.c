@@ -30,7 +30,8 @@ return (handle_write_char(c, buffer, flags, width, precision, size));
 int print_string(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
-int length = 0, i;
+int length = 0;
+int i;
 char *str = va_arg(types, char *);
 UNUSED(buffer);
 UNUSED(flags);

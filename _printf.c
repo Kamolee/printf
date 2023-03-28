@@ -28,7 +28,6 @@ if (format[i] != '%')
 buffer[buff_ind++] = format[i];
 if (buff_ind == BUFF_SIZE)
 print_buffer(buffer, &buff_ind);
-/* write(1, &format[i], 1);*/
 printed_chars++;
 }
 else
@@ -61,4 +60,3 @@ if (*buff_ind > 0)
 write(1, &buffer[0], *buff_ind);
 *buff_ind = 0;
 }
-
