@@ -11,6 +11,10 @@
 #define FHASH 8
 #define FSPACE 16
 #define UNUSED(x) (void)(x)
+#define S_LONG 2
+#define S_SHORT 1
+
+
 
 int _printf(const char *format, ...);
 int flags(const char *format, int *i);
@@ -20,6 +24,35 @@ int size(const char *format, int *i);
 int digit(char c);
 int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 int flags, int width, int precision, int size);
+int pchar(va_list types, char buffer[],
+int f, int w, int p, int s);
+int pstring(va_list types, char buffer[],
+int f, int w, int p, int s);
+int _percent(va_list types, char buffer[],
+int f, int w, int p, int s);
+int _int(va_list types, char buffer[],
+int f, int w, int p, int s);
+int pbinary(va_list types, char buffer[],
+int f, int w, int p, int s);
+int punsigned(va_list types, char buffer[],
+int f, int w, int p, int s);
+int Octal(va_list types, char buffer[],
+int f, int w, int p, int s);
+int _reverse(va_list types, char buffer[],
+int f, int w, int p, int s);
+int _rot13string(va_list types, char buffer[],
+int f, int w, int p, int s);
+int _pointer(va_list types, char buffer[],
+int f, int w, int p, int s);
+int _non_printable(va_list types, char buffer[],
+int f, int w, int p, int s);
+int print_hexa(va_list types, char map_to[], char buffer[],
+int flags, char flag_ch, int width, int precision, int size);
+int p_hexadecimal(va_list types, char buffer[],
+int f, int w, int p, int s);
+int print_hexa_upper(va_list types, char buffer[],
+int flags, int width, int precision, int size);
+
 
 /**
 

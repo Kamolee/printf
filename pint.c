@@ -1,22 +1,40 @@
 #include "main.h"
 #include <unistd.h>
-#include "main.h"
 
 /**
- * pchar - Prints a char
- * @types: List a of arguments
+ * _int - Print int
+ * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @f:  Calculates active flags
- * @w: Width
+ * @w: get width.
  * @p: Precision specification
  * @s: Size specifier
  * Return: Number of chars printed
  */
 
-int pchar(va_list types, char buffer[],
+int _int(va_list types, char buffer[],
 int f, int w, int p, int s)
-
 {
-char c = va_arg(types, int);
-return (handle_write_char(c, buffer, f, w, p, s));
+
+int j = BUFF_SIZE - 2;
+int s_negative = 0;
+long int n = va_arg(types, long int);
+unsigned long int num;
+n = convert_size_number(n, size);
+if (n == 0)
+buffer[j--] = '0';
+buffer[BUFF_SIZE - 1] = '\0';
+num = (unsigned long int)n;
+if (n < 0)
+{
+num = (unsigned long int)((-1) * n);
+s_negative = 1;
+}
+while (num > 0)
+{
+buffer[j--] = (num % 10) + '0';
+num /= 10;
+}
+j++;
+return (write_number(s_negative, j, buffer, f, w, p, s));
 }

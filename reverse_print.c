@@ -1,45 +1,47 @@
+#include <stdarg.h>
 #include "main.h"
-
-/************************* PRINT REVERSE *************************/
+#include <unistd.h>
 /**
- * print_reverse - Prints reverse string.
- * @types: Lista of arguments
+ * _reverse - Prints reverse string.
+ * @types: List of arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
+ * @f:  Calculates active flags
+ * @w: get width
+ * @p: Precision specification
+ * @s: Size specifier
  * Return: Numbers of chars printed
  */
 
-int print_reverse(va_list types, char buffer[],
-	int flags, int width, int precision, int size)
+
+int _reverse(va_list types, char buffer[],
+int f, int w, int p, int s)
 {
-	char *str;
-	int i, count = 0;
 
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(size);
+char *str;
+int i;
+int count = 0;
 
-	str = va_arg(types, char *);
+UNUSED(buffer);
+UNUSED(f);
+UNUSED(w);
+UNUSED(s);
 
-	if (str == NULL)
-	{
-		UNUSED(precision);
 
-		str = ")Null(";
-	}
-	for (i = 0; str[i]; i++)
-		;
+str = va_arg(types, char *);
 
-	for (i = i - 1; i >= 0; i--)
-	{
-		char z = str[i];
+if (str == NULL)
+{
+UNUSED(p);
 
-		write(1, &z, 1);
-		count++;
-	}
-	return (count);
+str = ")Null(";
+}
+for (i = 0; str[i]; i++)
+;
+for (i = i - 1; i >= 0; i--)
+{
+char z = str[i];
+write(1, &z, 1);
+count++;
+}
+return (count);
 }
