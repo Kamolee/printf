@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 void print_buff(char buffer[], int *index);
 
@@ -66,6 +67,6 @@ return (p_chars);
 void print_buff(char buffer[], int *index)
 {
 if (*index > 0)
-(write(1, &buffer[0], *index));
+write(1, &buffer[0], *index);
 *index = 0;
 }

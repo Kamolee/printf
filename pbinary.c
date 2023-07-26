@@ -1,4 +1,7 @@
 #include <stdarg.h>
+#include <unistd.h>
+#include "main.h"
+
 /**
  * pbinary - Prints an unsigned number
  * @types: Lista of arguments

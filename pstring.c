@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stddef.h>
-
+#include <unistd.h>
+#include "main.h"
 
 /**
 * pstring - Prints a string
@@ -35,9 +36,9 @@ while (str[length] != '\0')
 length++;
 if (p >= 0 && p < length)
 length = p;
-if (w> length)
+if (w > length)
 {
-if (f & F_MINUS)
+if (f & FMINUS)
 {
 write(1, &str[0], length);
 for (i = w - length; i > 0; i--)
