@@ -30,7 +30,7 @@ if (str == NULL)
 return (write(1, "(null)", 6));
 while (str[j] != '\0')
 {
-if (is_printable(str[j]))
+if (_printable(str[j]))
 buffer[j + offset] = str[j];
 else
 offset += append_hexa_code(str[j], buffer, j + offset);

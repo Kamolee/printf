@@ -20,7 +20,7 @@ int j = BUFF_SIZE - 2;
 int s_negative = 0;
 long int n = va_arg(types, long int);
 unsigned long int num;
-n = convert_size_number(n, size);
+n = convert_size_number(n, s);
 if (n == 0)
 buffer[j--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';

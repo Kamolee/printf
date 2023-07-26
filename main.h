@@ -62,6 +62,17 @@ char buffer[],
 int flags, int width, int precision, int size);
 int _rot13string(va_list types, char buffer[],
 int f, int w, int p, int s);
+int append_hexa_code(char ascii_code, char buffer[], int i);
+int handle_write_char(char c, char buffer[],
+int f, int w, int p, int s);
+int write_unsigned(int is_negative, int ind,
+char buffer[],
+int flags, int width, int precision, int size);
+long int convert_size_unsigned(unsigned long int num, int size);
+int _printable(char c);
+long int convert_size_number(long int num, int size);
+int write_number(int is_negative, int ind, char buffer[],
+int f, int w, int p, int s);
 
 
 

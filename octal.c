@@ -21,7 +21,7 @@ int i = BUFF_SIZE - 2;
 unsigned long int n = va_arg(types, unsigned long int);
 unsigned long int init_num = n;
 UNUSED(w);
-n = convert_size_unsgnd(n, s);
+n = convert_size_unsigned(n, s);
 
 
 if (n == 0)
@@ -35,5 +35,5 @@ n /= 8;
 if (f & FHASH && init_num != 0)
 buffer[i--] = '0';
 i++;
-return (write_unsgnd(0, i, buffer, f, w, p, s));
+return (write_unsigned(0, i, buffer, f, w, p, s));
 }

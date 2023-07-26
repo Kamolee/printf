@@ -47,5 +47,5 @@ ind++;
 
 
 return (write_pointer(buffer, ind, length,
-width, f, padd, extra_c, padd_start));
+w, f, padd, extra_c, padd_start));
 }

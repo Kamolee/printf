@@ -18,7 +18,7 @@ int f, int w, int p, int s)
 {
 int i = BUFF_SIZE - 2;
 unsigned long int n = va_arg(types, unsigned long int);
-n = convert_size_unsgnd(n, size);
+n = convert_size_unsigned(n,s);
 
 if (n == 0)
 buffer[i--] = '0';
@@ -29,5 +29,5 @@ buffer[i--] = (n % 10) + '0';
 n /= 10;
 }
 i++;
-return (write_unsgnd(0, i, buffer, f, w, p, s));
+return (write_unsigned(0, i, buffer, f, w, p, s));
 }
