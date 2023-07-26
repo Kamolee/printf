@@ -52,6 +52,17 @@ int p_hexadecimal(va_list types, char buffer[],
 int f, int w, int p, int s);
 int print_hexa_upper(va_list types, char buffer[],
 int flags, int width, int precision, int size);
+int write_num(int ind, char buffer[],
+int flags, int width, int prec,
+int length, char padd, char extra_c);
+int write_pointer(char buffer[], int ind, int length,
+int width, int flags, char padd, char extra_c, int padd_start);
+int write_unsigned(int is_negative, int ind,
+char buffer[],
+int flags, int width, int precision, int size);
+int _rot13string(va_list types, char buffer[],
+int f, int w, int p, int s);
+
 
 
 /**
