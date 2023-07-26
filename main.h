@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
+#include <unistd.h>
 #define BUFF_SIZE 1024
 #define SLONG 2
 #define SSHORT 1
@@ -13,6 +14,38 @@
 #define UNUSED(x) (void)(x)
 #define S_LONG 2
 #define S_SHORT 1
+
+
+/**
+
+ * struct fmt - Struct op
+
+ *
+
+ * @fmt: The format.
+
+ * @fn: The function associated.
+
+ */
+
+struct fmt
+
+{
+
+        char fmt;
+
+        int (*fn)(va_list, char[], int, int, int, int);
+
+};
+
+/**
+ * typedef struct fmt fmt_t - Struct op
+ *
+ * @fmt: The format.
+ * @fm_t: The function associated.
+ */
+typedef struct fmt fmt_t;
+
 
 
 
@@ -71,38 +104,8 @@ int flags, int width, int precision, int size);
 long int convert_size_unsigned(unsigned long int num, int size);
 int _printable(char c);
 long int convert_size_number(long int num, int size);
+int _printable(char c);
+long int convert_size_number(long int num, int size);
 int write_number(int is_negative, int ind, char buffer[],
 int f, int w, int p, int s);
-
-
-
-/**
-
- * struct fmt - Struct op
-
- *
-
- * @fmt: The format.
-
- * @fn: The function associated.
-
- */
-
-struct fmt
-
-{
-
-        char fmt;
-
-        int (*fn)(va_list, char[], int, int, int, int);
-
-};
-
-/**
- * typedef struct fmt fmt_t - Struct op
- *
- * @fmt: The format.
- * @fm_t: The function associated.
- */
-typedef struct fmt fmt_t;
 #endif
