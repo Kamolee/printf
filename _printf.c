@@ -45,7 +45,7 @@ w = width(format, &j, list);
 p = precision(format, &j, list);
 s = size(format, &j);
 ++j;
-print = handle_print(format, &j, list, buffer,
+print = _print(format, &j, list, buffer,
 f, w, p, s);
 if (print == -1)
 return (-1);

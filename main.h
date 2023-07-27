@@ -55,7 +55,7 @@ int width(const char *format, int *i, va_list list);
 int precision(const char *format, int *i, va_list list);
 int size(const char *format, int *i);
 int digit(char c);
-int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
+int _print(const char *fmt, int *ind, va_list list, char buffer[],
 int flags, int width, int precision, int size);
 int pchar(va_list types, char buffer[],
 int f, int w, int p, int s);
@@ -108,4 +108,7 @@ int _printable(char c);
 long int convert_size_number(long int num, int size);
 int write_number(int is_negative, int ind, char buffer[],
 int f, int w, int p, int s);
+int _print(const char *fmt, int *ind, va_list list, char buffer[],
+int f, int w, int p, int s);
+
 #endif

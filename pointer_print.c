@@ -27,7 +27,7 @@ UNUSED(s);
 if (addrs == NULL)
 return (write(1, "(nil)", 5));
 buffer[BUFF_SIZE - 1] = '\0';
-UNUSED(precision);
+UNUSED(p);
 num_addrs = (unsigned long)addrs;
 while (num_addrs > 0)
 {
