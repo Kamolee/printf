@@ -17,24 +17,17 @@
 
 
 /**
-
  * struct fmt - Struct op
-
  *
-
  * @fmt: The format.
-
  * @fn: The function associated.
-
  */
 
 struct fmt
 
 {
-
-        char fmt;
-
-        int (*fn)(va_list, char[], int, int, int, int);
+char fmt;
+int (*fn)(va_list, char[], int, int, int, int);
 
 };
 
@@ -47,9 +40,8 @@ struct fmt
 typedef struct fmt fmt_t;
 
 
-
-
 int _printf(const char *format, ...);
+void print_buff(char buffer[], int *index);
 int flags(const char *format, int *i);
 int width(const char *format, int *i, va_list list);
 int precision(const char *format, int *i, va_list list);
@@ -108,7 +100,7 @@ int _printable(char c);
 long int convert_size_number(long int num, int size);
 int write_number(int is_negative, int ind, char buffer[],
 int f, int w, int p, int s);
-int _print(const char *fmt, int *ind, va_list list, char buffer[],
-int f, int w, int p, int s);
+
+
 
 #endif

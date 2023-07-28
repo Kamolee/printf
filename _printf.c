@@ -1,7 +1,6 @@
 #include "main.h"
 #include <unistd.h>
-
-void print_buff(char buffer[], int *index);
+#include <stdarg.h>
 
 
 /**
@@ -9,6 +8,7 @@ void print_buff(char buffer[], int *index);
  * @format: format
  * Return: Printed characters
  */
+
 
 int _printf(const char *format, ...)
 {
@@ -34,7 +34,7 @@ if (format[j] != '%')
 buffer[index++] = format[j];
 if (index == BUFF_SIZE)
 print_buff(buffer, &index);
-/* write(1, &format[j], 1);*/
+
 p_chars++;
 }
 else
@@ -55,18 +55,4 @@ p_chars += print;
 print_buff(buffer, &index);
 va_end(list);
 return (p_chars);
-}
-
-
-
-/**
- * print_buff - Prints the contents of the buffer if it exist
- * @buffer: Array of chars
- * @index: Index at which to add next char
- */
-void print_buff(char buffer[], int *index)
-{
-if (*index > 0)
-write(1, &buffer[0], *index);
-*index = 0;
 }
